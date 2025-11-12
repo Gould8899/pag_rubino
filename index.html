@@ -4,350 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nadia Szachniuk</title>
+    <title>Guillermo Rubino</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        /* Variables de color y fondo */
-        :root {
-            --main-bg: linear-gradient(135deg, #181824 0%, #23233a 100%);
-            --container-bg: #101018;
-            --primary: #a5b4fc;
-            --accent: #7c88f4;
-            --text: #f5f6fa;
-            --text-light: #e0e2e6;
-            --border: #23233a;
-            --shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
-        }
-
-        body {
-            font-family: 'Montserrat', Arial, sans-serif;
-            background: var(--main-bg);
-            margin: 0;
-            padding: 0;
-            color: var(--text);
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            background: var(--container-bg);
-            border-radius: 18px;
-            box-shadow: var(--shadow);
-            padding: 32px 18px;
-        }
-
-        .profile-img {
-            width: 900px;
-            max-width: 100%;
-            height: auto;
-            object-fit: cover;
-            border-radius: 18px;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
-            display: block;
-            margin: 0 auto 36px auto;
-            transition: box-shadow 0.3s;
-        }
-
-        .profile-img:hover {
-            /* Sin efecto al pasar el mouse */
-        }
-
-        h1,
-        h2,
-        h3 {
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 2.8rem;
-            margin-bottom: 8px;
-            color: var(--text);
-        }
-
-        h2 {
-            font-size: 1.3rem;
-            font-weight: 400;
-            color: var(--primary);
-            margin-bottom: 24px;
-        }
-
-        h3 {
-            color: #525275 !important;
-            font-size: 1.2rem;
-            margin-bottom: 18px;
-            letter-spacing: 2px;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        p,
-        blockquote,
-        label,
-        input,
-        textarea {
-            color: var(--text);
-        }
-
-        p {
-            font-size: 1.15rem;
-            word-break: break-word;
-            white-space: normal;
-        }
-
-        .bio {
-            margin-bottom: 24px;
-            line-height: 1.4;
-            padding-left: 2em;
-            color: var(--text-light);
-            text-indent: 2em;
-        }
-
-        /* Si quieres que todos los párrafos de la bio tengan menor interlineado: */
-        body .container .bio p {
-            line-height: 1.2 !important;
-            font-size: 1.05rem !important;
-            margin-top: 0 !important;
-            margin-bottom: 0.7em !important;
-            display: block !important;
-            text-indent: 2em !important;
-            color: var(--text-light) !important;
-        }
-
-        .links {
-            text-align: center;
-            margin-top: 18px;
-        }
-
-        .links a {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 700;
-            margin: 0 10px;
-            transition: color 0.2s;
-        }
-
-        .links a:hover {
-            color: var(--primary);
-        }
-
-        .instagram-link {
-            color: #E1306C !important;
-        }
-
-        .spotify-link {
-            color: #1DB954 !important;
-        }
-
-        .facebook-link {
-            color: #1877F3 !important;
-        }
-
-        .youtube-link {
-            color: #FF0000 !important;
-        }
-
-        input,
-        textarea {
-            background: #181824;
-            color: var(--text);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 8px;
-            font-size: 1rem;
-        }
-
-        button[type="submit"] {
-            background: var(--accent);
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            padding: 10px 0;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        button[type="submit"]:hover {
-            background: var(--primary);
-        }
-
-        blockquote {
-            background: none;
-            border: none;
-            padding: 0 0 16px 0;
-            margin: 0 0 16px 0;
-            color: var(--text-light) !important;
-            font-style: italic;
-        }
-
-        /* Modern styles for main photo and name */
-        .main-photo {}
-
-        .main-photo-large {
-            transform: scale(1.15);
-            overflow: visible;
-            z-index: 2;
-            position: relative;
-            width: 100%;
-            margin: 0 0 40px 0;
-        }
-
-        .name-banner {
-            position: absolute;
-            top: 18px;
-            right: 0;
-            left: auto;
-            background: transparent;
-            color: #a5b4fc;
-            padding: 0 12px 0 0;
-            border-radius: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            box-shadow: none;
-            font-family: 'Montserrat', Arial, sans-serif;
-            text-transform: uppercase;
-            line-height: 1.1;
-        }
-
-        .name-banner .nombre-guillermo {
-            font-size: 1.7rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-        }
-
-        .name-banner .nombre-rubino {
-            font-size: 1.3rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            margin-top: 2px;
-        }
-
-        .name-main {
-            /* Eliminado: el nombre principal ahora es una sola línea */
-        }
-
-        .name-sub {
-            /* Eliminado: el nombre principal ahora es una sola línea */
-        }
-
-        .section {
-            margin: 40px 0;
-            text-align: center;
-        }
-
-        .video-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 24px;
-            justify-content: center;
-        }
-
-        .video-list iframe {
-            width: 320px;
-            height: 180px;
-            border-radius: 12px;
-            border: none;
-            box-shadow: 0 2px 12px rgba(60, 60, 120, 0.12);
-            background: #23233a;
-            transition: box-shadow 0.2s;
-        }
-
-        .video-list iframe:hover {
-            box-shadow: 0 4px 24px rgba(129, 140, 248, 0.18);
-        }
-
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
-            justify-content: center;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0px;
-            justify-items: stretch;
-            align-items: stretch;
-            margin-top: 18px;
-        }
-
-        .gallery-img {
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            height: auto;
-            object-fit: cover;
-            border-radius: 0px;
-            box-shadow: none;
-            display: block;
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                padding: 12px 2vw;
-            }
-
-            .profile-img {
-                width: 100vw;
-                margin-left: -2vw;
-            }
-
-            .instagram-link {
-                color: #E1306C !important;
-            }
-
-            .facebook-link {
-                color: #1877F3 !important;
-            }
-
-            .youtube-link {
-                color: #FF0000 !important;
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-
-            h2 {
-                font-size: 1rem;
-            }
-
-            h3 {
-                font-size: 1rem;
-            }
-
-            p {
-                font-size: 1rem;
-            }
-
-            .main-photo {
-                width: 100vw;
-                margin-left: -2vw;
-            }
-
-            .name-main {
-                font-size: 2.2rem;
-            }
-
-            .name-sub {
-                font-size: 1.3rem;
-            }
-
-            .video-list iframe {
-                width: 98vw;
-                height: 180px;
-            }
-
-            .gallery-img {
-                aspect-ratio: 1 / 1;
-            }
-
-            .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const images = document.querySelectorAll('.gallery-img');
@@ -367,6 +26,8 @@
             modal.style.justifyContent = 'center';
             modal.style.alignItems = 'center';
             modal.style.zIndex = '9999';
+            modal.setAttribute('role', 'dialog');
+            modal.setAttribute('aria-modal', 'true');
 
             // Modal content
             const modalContent = document.createElement('div');
@@ -485,67 +146,65 @@
     <div class="container">
         <!-- Foto principal -->
         <!-- Sección: Foto principal y banner de nombre -->
-        <div style="position:relative; width:100%; max-width:1000px; margin:0 auto 40px auto;">
-            <img src="Foto_Rubino.jpg" alt="Guillermo Rubino" class="profile-img">
+        <div class="hero">
+            <img src="Foto_Rubino.jpg" alt="Guillermo Rubino" class="profile-img" loading="eager" width="1200" height="800">
             <span class="name-banner">
                 <span class="nombre-guillermo">Guillermo</span>
                 <span class="nombre-rubino">Rubino</span>
             </span>
         </div>
-        <!-- <h1>Nadia Szachniuk</h1>
-        <h2>Artista, Cantante y Compositora</h2> -->
         <!-- Sección: Videos de YouTube -->
-        <div style="margin: 32px 0; text-align: center;">
-            <h3 style="color:#3b3b5c;">Videos</h3>
-            <div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center;">
-                <iframe width="320" height="180" src="https://www.youtube.com/embed/GYWDTms5Vi0" title="YouTube video 1"
-                    frameborder="0" allowfullscreen></iframe>
-                <iframe width="320" height="180" src="https://www.youtube.com/embed/VfAZhtENXMk" title="YouTube video 2"
-                    frameborder="0" allowfullscreen></iframe>
-                <iframe width="320" height="180" src="https://www.youtube.com/embed/Zp6OhnGS1TY" title="YouTube video 3"
-                    frameborder="0" allowfullscreen></iframe>
+        <div class="section">
+            <h3 class="section-title">Videos</h3>
+            <div class="video-list">
+                <iframe src="https://www.youtube.com/embed/GYWDTms5Vi0" title="YouTube video 1"
+                    frameborder="0" allowfullscreen loading="lazy"></iframe>
+                <iframe src="https://www.youtube.com/embed/VfAZhtENXMk" title="YouTube video 2"
+                    frameborder="0" allowfullscreen loading="lazy"></iframe>
+                <iframe src="https://www.youtube.com/embed/Zp6OhnGS1TY" title="YouTube video 3"
+                    frameborder="0" allowfullscreen loading="lazy"></iframe>
             </div>
         </div>
         <!-- Enlaces de Spotify -->
         <!-- Sección: Enlaces de Spotify -->
-        <div style="margin: 32px 0; text-align: center;">
-            <h3 style="color:#3b3b5c;">Escuchá sus discos</h3>
+        <div class="section">
+            <h3 class="section-title">Escuchá sus discos</h3>
             <div class="spotify-embed">
-                <iframe style="border-radius:12px"
+                <iframe
                     src="https://open.spotify.com/embed/album/1yZWIy7yIfeTolvEg2zFH8?utm_source=generator" width="100%"
                     height="152" frameBorder="0" allowfullscreen=""
-                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"></iframe>
-                <iframe style="border-radius:12px;margin-top:18px;"
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" loading="lazy"></iframe>
+                <iframe
                     src="https://open.spotify.com/embed/album/3VEEqqigrOfnI3pIqTbDn7?utm_source=generator" width="100%"
                     height="152" frameBorder="0" allowfullscreen=""
-                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"></iframe>
-                <iframe style="border-radius:12px;margin-top:18px;"
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" loading="lazy"></iframe>
+                <iframe
                     src="https://open.spotify.com/embed/album/1F6iIHY9CPYJSPXJcC0oME?utm_source=generator" width="100%"
                     height="152" frameBorder="0" allowfullscreen=""
-                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"></iframe>
-                <iframe style="border-radius:12px;margin-top:18px;"
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" loading="lazy"></iframe>
+                <iframe
                     src="https://open.spotify.com/embed/album/7lJmpJfvAHHRqOrQ6hK3tT?utm_source=generator" width="100%"
                     height="152" frameBorder="0" allowfullscreen=""
-                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"></iframe>
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" loading="lazy"></iframe>
             </div>
         </div>
         <!-- Galería de fotos -->
         <!-- Sección: Galería de fotos -->
-        <div style="margin: 32px 0;">
-            <h3 style="color:#3b3b5c;text-align:center;">Galería</h3>
+        <div class="section">
+            <h3 class="section-title">Galería</h3>
             <div class="gallery-grid">
-                <img src="1.avif" alt="Foto 1" class="gallery-img">
-                <img src="2.avif" alt="Foto 2" class="gallery-img">
-                <img src="3.avif" alt="Foto 3" class="gallery-img">
-                <img src="4.avif" alt="Foto 4" class="gallery-img">
-                <img src="5.avif" alt="Foto 5" class="gallery-img">
-                <img src="6.avif" alt="Foto 6" class="gallery-img">
+                <img src="1.avif" alt="Foto 1" class="gallery-img" loading="lazy">
+                <img src="2.avif" alt="Foto 2" class="gallery-img" loading="lazy">
+                <img src="3.avif" alt="Foto 3" class="gallery-img" loading="lazy">
+                <img src="4.avif" alt="Foto 4" class="gallery-img" loading="lazy">
+                <img src="5.avif" alt="Foto 5" class="gallery-img" loading="lazy">
+                <img src="6.avif" alt="Foto 6" class="gallery-img" loading="lazy">
             </div>
         </div>
         <!-- Biografía extendida -->
         <!-- Sección: Biografía extendida -->
-        <div class="bio">
-            <h3 style="color:#3b3b5c;text-align:center;">BIO</h3>
+        <div class="bio section">
+            <h3 class="section-title">BIO</h3>
             <p>Oriunda de Salta, y con 20 años de residencia en Buenos Aires, se dedica al canto desde muy joven.
                 Presenta una amplia trayectoria como cantante solista, tanto en el ámbito popular como en el lírico. Es
                 Musicoterapeuta en prevención de la salud (USAL 2004), y estudió la Tecnicatura en Música Antigua con
@@ -584,31 +243,31 @@
         </div>
         <!-- Comentarios de la prensa -->
         <!-- Sección: Comentarios de la prensa -->
-        <div style="margin: 32px 0;">
-            <h3 style="color:#3b3b5c;text-align:center;">COMENTARIOS DE LA PRENSA</h3>
-            <blockquote style="font-style:italic;color:#b9b9b9;margin-bottom:16px;">"Su música es, por suerte,
+        <div class="section">
+            <h3 class="section-title">COMENTARIOS DE LA PRENSA</h3>
+            <blockquote>"Su música es, por suerte,
                 inclasificable. Es decir, se aleja de cualquier simplificación y nada tiene que ver con ningún lugar
                 común. Y, al mismo tiempo, también por suerte, guarda claras e identificables señales que marcan
                 raigambres y tradiciones. Parte del atractivo de Luna atrás, su notable segundo disco, tiene que ver con
                 su voz, desde ya. Con su fraseo expresivo y sin amaneramiento, con la afinación impecable y con la
                 calidez y comunicatividad del timbre."<br><span style="font-weight:700;">Diego Fischerman.
                     Página/12</span></blockquote>
-            <blockquote style="font-style:italic;color:#555;margin-bottom:16px;">"La interpretación de Szachniuk es
+            <blockquote>"La interpretación de Szachniuk es
                 exquisita, explora todos los matices posibles y se mueve con igual maestría entre el canto lírico, el
                 jazz y el canto popular".<br><span style="font-weight:700;">Daniel Hofer. Hecho en Bs. As.</span>
             </blockquote>
-            <blockquote style="font-style:italic;color:#555;margin-bottom:16px;">"Pocos secretos del canto están
+            <blockquote>"Pocos secretos del canto están
                 cerrados a Nadia Szachniuk".<br><span style="font-weight:700;">Patricio Féminis. Clarín</span>
             </blockquote>
-            <blockquote style="font-style:italic;color:#555;margin-bottom:16px;">"Pletórico de matices, Luna Atrás se
+            <blockquote>"Pletórico de matices, Luna Atrás se
                 desliza con destreza entre lo académico y lo popular en la voz de una cantante que ha sabido estudiar y
                 macerar las formas de cada especie musical".<br><span style="font-weight:700;">Télam</span></blockquote>
         </div>
         <!-- Contacto -->
         <!-- Sección: Contacto -->
-        <div style="margin: 32px 0;">
-            <h3 style="color:#3b3b5c;text-align:center;">CONTACTO</h3>
-            <p style="text-align:center;font-size:1.1rem;">nadiaszachniuk@gmail.com</p>
+        <div class="section">
+            <h3 class="section-title">CONTACTO</h3>
+            <p class="contact-email">nadiaszachniuk@gmail.com</p>
         </div>
         <!-- Enlaces sociales -->
         <!-- Sección: Enlaces sociales -->
@@ -620,7 +279,6 @@
             <a href="https://www.facebook.com/nadia.szachniuk" target="_blank" class="facebook-link">Facebook</a>
             <a href="https://www.youtube.com/@surdelsurensamble7331" target="_blank" class="youtube-link">YouTube</a>
         </div>
-    </div>
     </div>
 </body>
 

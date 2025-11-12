@@ -1,0 +1,199 @@
+/* Variables de color y fondo */
+:root {
+  --main-bg: linear-gradient(135deg, #181824 0%, #23233a 100%);
+  --container-bg: #101018;
+  --primary: #a5b4fc;
+  --accent: #7c88f4;
+  --text: #f5f6fa;
+  --text-light: #cfd3dd;
+  --muted: #8f95b8;
+  --border: #23233a;
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--main-bg);
+  color: var(--text);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3 { text-align: center; margin: 0 0 12px; }
+
+h1 { font-size: clamp(2rem, 4vw, 2.6rem); color: var(--text); }
+
+h2 { font-size: clamp(1.1rem, 2.5vw, 1.25rem); font-weight: 400; color: var(--primary); }
+
+h3 { font-size: clamp(0.95rem, 2vw, 1.1rem); letter-spacing: 0.14em; font-weight: 700; text-transform: uppercase; color: var(--muted); }
+
+.section-title { color: var(--muted); }
+
+p { font-size: clamp(1rem, 2.1vw, 1.15rem); margin: 0 0 1rem; }
+
+.container {
+  max-width: 1000px;
+  margin: 40px auto;
+  background: var(--container-bg);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  padding: 28px 18px;
+}
+
+/* Hero (foto + nombre) */
+.hero {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto 32px auto;
+}
+
+.profile-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+  display: block;
+}
+
+.name-banner {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  color: var(--primary);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.nombre-guillermo { font-size: clamp(1.2rem, 3.2vw, 1.8rem); font-weight: 700; letter-spacing: 0.12em; }
+.nombre-rubino    { font-size: clamp(1rem, 2.6vw, 1.4rem); font-weight: 600; letter-spacing: 0.12em; opacity: 0.95; }
+
+/* Secciones */
+.section { margin: 32px 0; }
+.section p { text-align: center; }
+
+/* Videos */
+.video-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  justify-items: center;
+}
+
+.video-list iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 2px 12px rgba(60, 60, 120, 0.12);
+  background: #23233a;
+  transition: box-shadow 0.2s ease;
+}
+
+.video-list iframe:hover { box-shadow: 0 4px 24px rgba(129, 140, 248, 0.18); }
+
+/* Spotify */
+.spotify-embed iframe {
+  display: block;
+  width: 100%;
+  min-height: 152px;
+  border-radius: 12px;
+}
+
+.spotify-embed iframe + iframe { margin-top: 18px; }
+
+/* Galería */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 8px;
+  justify-items: stretch;
+  align-items: stretch;
+  margin-top: 18px;
+}
+
+.gallery-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* Bio */
+.bio { color: var(--text-light); text-align: left; }
+.bio p { text-indent: 2em; line-height: 1.4; }
+
+/* Citas */
+blockquote {
+  background: none;
+  border: none;
+  padding: 0 0 16px 0;
+  margin: 0 0 16px 0;
+  color: var(--text-light);
+  font-style: italic;
+  text-align: left;
+}
+
+/* Formularios (si existieran) */
+input, textarea {
+  background: #181824;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 1rem;
+}
+
+button[type="submit"] {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button[type="submit"]:hover { background: var(--primary); }
+
+/* Links sociales */
+.links { text-align: center; margin-top: 18px; }
+.links a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 700;
+  margin: 0 10px;
+  transition: color 0.2s ease;
+}
+.links a:hover { color: var(--primary); }
+
+.instagram-link { color: #E1306C !important; }
+.spotify-link   { color: #1DB954 !important; }
+.facebook-link  { color: #1877F3 !important; }
+.youtube-link   { color: #FF0000 !important; }
+
+/* Contacto */
+.contact-email { font-size: 1.1rem; }
+
+/* Responsive finos */
+@media (max-width: 600px) {
+  .container { padding: 16px 14px; margin: 20px auto; }
+  .name-banner { top: auto; bottom: 12px; right: 12px; }
+}
