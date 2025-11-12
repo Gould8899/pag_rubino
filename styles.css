@@ -195,13 +195,16 @@ button[type="submit"]:hover { background: var(--primary); }
 /* Responsive finos */
 @media (max-width: 600px) {
   .container { padding: 14px 14px; margin: 16px auto; }
-  /* Dar protagonismo a la foto en móvil */
-  .hero { margin-left: -14px; margin-right: -14px; margin-bottom: 24px; }
-  .profile-img { border-radius: 0; }
+  /* Foto centrada y con protagonismo (sin desalinear el layout) */
+  .hero { margin: 0 auto 24px auto; }
+  .profile-img { border-radius: 12px; }
   /* Mantener el nombre arriba en móvil */
   .name-banner { top: 12px; right: 12px; bottom: auto; }
+  /* Tipografías del nombre un poco más chicas en móvil */
+  .nombre-guillermo { font-size: 1.05rem; letter-spacing: 0.1em; }
+  .nombre-rubino { font-size: 0.95rem; letter-spacing: 0.1em; }
   /* Hacer los videos un poco más pequeños en móvil */
   .video-list { gap: 12px; }
-  .video-list iframe { width: min(100%, 340px); }
+  .video-list iframe { width: min(100%, 300px); }
   .section { margin: 24px 0; }
 }
