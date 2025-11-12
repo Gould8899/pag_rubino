@@ -194,6 +194,14 @@ button[type="submit"]:hover { background: var(--primary); }
 
 /* Responsive finos */
 @media (max-width: 600px) {
-  .container { padding: 16px 14px; margin: 20px auto; }
-  .name-banner { top: auto; bottom: 12px; right: 12px; }
+  .container { padding: 14px 14px; margin: 16px auto; }
+  /* Dar protagonismo a la foto en móvil */
+  .hero { margin-left: -14px; margin-right: -14px; margin-bottom: 24px; }
+  .profile-img { border-radius: 0; }
+  /* Mantener el nombre arriba en móvil */
+  .name-banner { top: 12px; right: 12px; bottom: auto; }
+  /* Hacer los videos un poco más pequeños en móvil */
+  .video-list { gap: 12px; }
+  .video-list iframe { width: min(100%, 340px); }
+  .section { margin: 24px 0; }
 }
