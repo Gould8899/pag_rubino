@@ -137,7 +137,7 @@ p { font-size: clamp(1rem, 2.1vw, 1.15rem); margin: 0 0 1rem; }
 
 /* Bio */
 .bio { color: var(--text-light); text-align: left; }
-.bio p { text-indent: 2em; line-height: 1.4; }
+.bio p { text-indent: 2em; line-height: 1.4; text-align: left; }
 
 /* Citas */
 blockquote {
