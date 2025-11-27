@@ -137,6 +137,26 @@
                     modal.style.display = 'flex';
                 });
             });
+
+            // Video Facade Logic
+            const facades = document.querySelectorAll('.video-facade');
+            facades.forEach(facade => {
+                const videoId = facade.dataset.videoId;
+                facade.style.backgroundImage = `url('https://img.youtube.com/vi/${videoId}/maxresdefault.jpg')`;
+
+                facade.addEventListener('click', function() {
+                    const iframe = document.createElement('iframe');
+                    iframe.setAttribute('src', `https://www.youtube.com/embed/${videoId}?autoplay=1`);
+                    iframe.setAttribute('frameborder', '0');
+                    iframe.setAttribute('allowfullscreen', '');
+                    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+                    iframe.style.width = '100%';
+                    iframe.style.height = '100%';
+                    
+                    this.innerHTML = '';
+                    this.appendChild(iframe);
+                });
+            });
         });
     </script>
 </head>
@@ -147,10 +167,11 @@
         <div class="nav-container">
             <a href="#home" class="nav-logo">GR</a>
             <ul class="nav-links">
-                <li><a href="#videos">Videos</a></li>
-                <li><a href="#music">Música</a></li>
-                <li><a href="#gallery">Galería</a></li>
                 <li><a href="#bio">Bio</a></li>
+                <li><a href="#surdelsur">SurdelSur</a></li>
+                <li><a href="#music-videos">Música y Videos</a></li>
+                <li><a href="#workshops">Docencia</a></li>
+                <li><a href="#gallery">Galería</a></li>
                 <li><a href="#contact">Contacto</a></li>
             </ul>
         </div>
@@ -173,25 +194,100 @@
     </header>
 
     <main>
-        <!-- Sección: Videos de YouTube -->
-        <section id="videos" class="content-section alt-bg">
-            <div class="section-container">
-                <h3 class="section-title">Videos</h3>
-                <div class="video-list">
-                    <iframe src="https://www.youtube.com/embed/GYWDTms5Vi0" title="YouTube video 1"
-                        frameborder="0" allowfullscreen loading="lazy"></iframe>
-                    <iframe src="https://www.youtube.com/embed/VfAZhtENXMk" title="YouTube video 2"
-                        frameborder="0" allowfullscreen loading="lazy"></iframe>
-                    <iframe src="https://www.youtube.com/embed/Zp6OhnGS1TY" title="YouTube video 3"
-                        frameborder="0" allowfullscreen loading="lazy"></iframe>
+        <!-- Sección: Biografía extendida -->
+        <section id="bio" class="content-section alt-bg">
+            <div class="section-container bio-container">
+                <h3 class="section-title">Biografía</h3>
+                <div class="bio-text">
+                    <p>Guillermo Rubino (La Plata, 1979) es un violinista y director argentino especializado en tango y música latinoamericana. Es una figura destacada del tango contemporáneo por su capacidad de unir la tradición con las estéticas actuales, integrando técnica, expresividad, arreglo e improvisación.</p>
+
+                    <p>Ganador del Latin Grammy 2024 como integrante del Diego Schissi Quinteto, fue también primer violín de la Orquesta Estable del Teatro Argentino de La Plata y de la Orquesta El Arranque. Desde 2009 se desempeña como instructor de cuerdas de la Orquesta Escuela Emilio Balcarce, uno de los programas pedagógicos más influyentes del tango.</p>
+
+                    <p>A lo largo de su formación, estudió con maestros fundamentales del violín argentino como José Bondar, Pablo Saraví y Szymsia Bajour, quienes marcaron su enfoque interpretativo y su desarrollo dentro de las cuerdas del tango y la música académica.</p>
+
+                    <p>Es fundador y director del SurdelSur Ensamble, con el que grabó varios discos nominados a los Premios Gardel y se presentó en escenarios como el Teatro Colón, el CCK, la Usina del Arte y el Teatro San Martín. Publicó el libro “12 solos famosos de violín en el tango”, un trabajo de referencia para instrumentistas y estudiantes.</p>
+
+                    <p>Como docente internacional dicta workshops, masterclasses y programas académicos en Argentina, Europa y Estados Unidos, y ha ofrecido conferencias en instituciones como la University of Pennsylvania y la Central High School of Philadelphia, abordando tango tradicional, tango contemporáneo y música argentina actual.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Sección: Enlaces de Spotify -->
-        <section id="music" class="content-section">
+        <!-- Sección: Sur del Sur Ensamble -->
+        <section id="surdelsur" class="content-section">
             <div class="section-container">
-                <h3 class="section-title">Escuchá sus discos</h3>
+                <h3 class="section-title">SurdelSur Ensamble</h3>
+                <div class="bio-text" style="max-width: 800px; margin: 0 auto 40px;">
+                    <p>SurdelSur Ensamble es el proyecto creado y dirigido por Guillermo Rubino, dedicado a interpretar obras originales y arreglos contemporáneos para cuerdas de compositores argentinos. La propuesta combina tango, música contemporánea y folklore argentino con un sonido joven y fresco.</p>
+                    <p>El ensamble se ha presentado en escenarios como el Teatro Colón, Teatro San Martín, Usina del Arte y el CCK, y cuenta con tres discos, uno de ellos nominado a los Premios Carlos Gardel.</p>
+                </div>
+                <div class="compact-video-list">
+                    <div class="video-wrapper">
+                        <div class="video-facade" data-video-id="I8P09y__x4E">
+                            <div class="play-button"></div>
+                        </div>
+                        <p class="video-caption">"Cielo" (Guillermo Rubino) en el Teatro Colón</p>
+                    </div>
+                    <div class="video-wrapper">
+                        <div class="video-facade" data-video-id="Zp6OhnGS1TY">
+                            <div class="play-button"></div>
+                        </div>
+                        <p class="video-caption">"Búsqueda" (Chango Spasiuk)</p>
+                    </div>
+                </div>
+                <div style="text-align: center;">
+                    <a href="https://www.youtube.com/@surdelsurensamble7331" target="_blank" class="social-link youtube-link" style="display: inline-block; padding: 12px 30px; font-size: 1.1rem;">
+                        Ver canal de YouTube
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Música y Videos -->
+        <section id="music-videos" class="content-section alt-bg">
+            <div class="section-container">
+                <h3 class="section-title">Música y Videos</h3>
+                
+                <h4 style="text-align: center; color: var(--text-light); margin-bottom: 24px; font-size: 1.5rem;">Videos Destacados</h4>
+                <div class="compact-video-list" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                    <div class="video-wrapper">
+                        <div class="video-facade" data-video-id="Zp6OhnGS1TY">
+                            <div class="play-button"></div>
+                        </div>
+                        <p class="video-caption">Video 1</p>
+                    </div>
+                    <div class="video-wrapper">
+                        <div class="video-facade" data-video-id="Zp6OhnGS1TY">
+                            <div class="play-button"></div>
+                        </div>
+                        <p class="video-caption">Video 2</p>
+                    </div>
+                    <div class="video-wrapper">
+                        <div class="video-facade" data-video-id="Zp6OhnGS1TY">
+                            <div class="play-button"></div>
+                        </div>
+                        <p class="video-caption">Video 3</p>
+                    </div>
+                    <div class="video-wrapper">
+                        <div class="video-facade" data-video-id="Zp6OhnGS1TY">
+                            <div class="play-button"></div>
+                        </div>
+                        <p class="video-caption">Video 4</p>
+                    </div>
+                    <div class="video-wrapper">
+                        <div class="video-facade" data-video-id="Zp6OhnGS1TY">
+                            <div class="play-button"></div>
+                        </div>
+                        <p class="video-caption">Video 5</p>
+                    </div>
+                    <div class="video-wrapper">
+                        <div class="video-facade" data-video-id="Zp6OhnGS1TY">
+                            <div class="play-button"></div>
+                        </div>
+                        <p class="video-caption">Video 6</p>
+                    </div>
+                </div>
+
+                <h4 style="text-align: center; color: var(--text-light); margin-bottom: 24px; font-size: 1.5rem;">Discografía en Spotify</h4>
                 <div class="spotify-grid">
                     <iframe
                         src="https://open.spotify.com/embed/album/1yZWIy7yIfeTolvEg2zFH8?utm_source=generator" width="100%"
@@ -213,21 +309,42 @@
             </div>
         </section>
 
+        <!-- Sección: Workshops y Docencia -->
+        <section id="workshops" class="content-section">
+            <div class="section-container">
+                <h3 class="section-title">Workshops y Docencia</h3>
+                <div class="bio-text" style="max-width: 800px; margin: 0 auto 40px;">
+                    <p>Entre 2016 y 2020 produjo el ciclo “Todo conCuerda” en Café Vinilo, dedicado a explorar la música para cuerdas en diversos géneros. Desde 2018 es docente en los programas de formación de Tango Sin Fin, Tango para Músicos y Tango for Musicians en Argentina, Europa y Estados Unidos. Publicó el libro “12 solos famosos de violín en el tango” y es concertino de la Orquesta Sin Fin.</p>
+                    <p>Ha sido invitado a brindar masterclasses en el Festival Internacional D’Addario, compartiendo programa con destacados solistas latinoamericanos. Integra el Arthaus Ensemble, con el que interpreta repertorio contemporáneo, y en 2025 fue invitado por la Universidad de Pensilvania y la Central High School of Music de Filadelfia para ofrecer conferencias y conciertos sobre tango y música popular argentina.</p>
+                </div>
+                
+                <h4 style="text-align: center; color: var(--text-light); margin-bottom: 24px; font-size: 1.3rem;">Galería de Workshops</h4>
+                <div class="gallery-grid" style="margin-bottom: 40px;">
+                    <img src="fotosgui\1CentralFiladelfia1.jpeg" alt="Workshop Filadelfia 1" class="gallery-img" loading="lazy"> 
+                    <img src="fotosgui\1CentralFiladelfia2.jpeg" alt="Workshop Filadelfia 2" class="gallery-img" loading="lazy">
+                    <img src="fotosgui\1Reed1.jpeg" alt="Workshop Reed" class="gallery-img" loading="lazy">
+                    <img src="fotosgui\UniFiladelfia1.jpeg" alt="Universidad Filadelfia" class="gallery-img" loading="lazy">
+                </div>
+
+                <div style="text-align: center; background: rgba(255,255,255,0.05); padding: 30px; border-radius: 12px; max-width: 600px; margin: 0 auto;">
+                    <h4 style="color: var(--accent); margin-bottom: 16px;">Próximas Ediciones</h4>
+                    <p style="color: var(--text-light);">Consultar por nuevas fechas y masterclasses.</p>
+                    <a href="#contact" style="display: inline-block; margin-top: 10px; color: var(--primary); text-decoration: underline;">Contactar para más información</a>
+                </div>
+            </div>
+        </section>
+
         <!-- Sección: Galería de fotos -->
         <section id="gallery" class="content-section alt-bg">
             <div class="section-container">
                 <h3 class="section-title">Galería</h3>
                 <div class="gallery-grid">
-                    <img src="fotosgui\1CentralFiladelfia1.jpeg" alt="1CentralFiladelfia1" class="gallery-img" loading="lazy"> 
-                    <img src="fotosgui\1CentralFiladelfia2.jpeg" alt="1CentralFiladelfia2" class="gallery-img" loading="lazy">
-                    <img src="fotosgui\1Reed1.jpeg" alt="1Reed1" class="gallery-img" loading="lazy">
                     <img src="fotosgui\ChangoSurdelSur.jpeg" alt="ChangoSurdelSur" class="gallery-img" loading="lazy">
                     <img src="fotosgui\Colon.jpeg" alt="Colon" class="gallery-img" loading="lazy">
                     <img src="fotosgui\Ion.jpeg" alt="Ion" class="gallery-img" loading="lazy">
                     <img src="fotosgui\LatinGrammy.jpeg" alt="LatinGrammy" class="gallery-img" loading="lazy">
                     <img src="fotosgui\Stowe1.jpeg" alt="Stowe1" class="gallery-img" loading="lazy">
                     <img src="fotosgui\UniFiladelfia2.jpeg" alt="UniFiladelfia2" class="gallery-img" loading="lazy">
-                    <img src="fotosgui\UniFiladelfia1.jpeg" alt="UniFiladelfia1" class="gallery-img" loading="lazy">
                     <img src="fotosgui\Usinadelarte.jpeg" alt="Usinadelarte" class="gallery-img" loading="lazy">
                     <img src="fotosgui\50A0914.jpg" alt="50A0914" class="gallery-img" loading="lazy">
                     <img src="fotosgui\a0402.2018_35_37fa4d.jpg" alt="a0402.2018_35_37fa4d" class="gallery-img" loading="lazy">
@@ -238,28 +355,6 @@
                     <img src="fotosgui\FacDerecho.JPG" alt="FacDerecho" class="gallery-img" loading="lazy">            
                     <img src="fotosgui\Sanmartin5.JPG" alt="Sanmartin5" class="gallery-img" loading="lazy">
                     <img src="fotosgui\SanMartin7.JPG" alt="SanMartin7" class="gallery-img" loading="lazy">
-                </div>
-            </div>
-        </section>
-
-        <!-- Sección: Biografía extendida -->
-        <section id="bio" class="content-section">
-            <div class="section-container bio-container">
-                <h3 class="section-title">Biografía</h3>
-                <div class="bio-text">
-                    <p>Violinista y compositor nacido en La Plata en 1979, formado en el Conservatorio “Gilardo Gilardi”, donde egresó como Instrumentista de Violín. Estudió con José Bondar, Pablo Saraví y Szymsia Bajour, y se desempeñó como primer violín en diversas formaciones académicas, entre ellas las orquestas de cámara del Conservatorio y la Camerata Académica del Teatro Argentino. Durante nueve años integró la Orquesta Estable del Teatro Argentino como suplente de solista, abordando repertorio sinfónico, operístico y de ballet.</p>
-
-                    <p>Participó de la Orquesta Sinfónica Juvenil del MERCOSUR en giras internacionales y actuó como solista con la Orquesta de Cámara Mayo. Entre 2005 y 2014 fue primer violín de la Orquesta El Arranque, con la que realizó giras nacionales e internacionales y registró los discos “Nuevos” y “Leopoldo Federico & El Arranque”, este último ganador del Premio Carlos Gardel.</p>
-
-                    <p>Desde 2009 es primer violín e instructor de cuerdas de la Orquesta Escuela de Tango Emilio Balcarce, el proyecto pedagógico de tango más destacado de la actualidad. Participó como solista en los álbumes “Mistonguero” y “Gobbi inédito”, ambos premiados, y formó parte del concierto “Piazzolla 100 años” en la sala principal del Teatro Colón.</p>
-
-                    <p>Es miembro fundador del Diego Schissi Quinteto, con el que grabó numerosos discos –incluido “Te” y “Apiazolado”, ganador del Latin Grammy al Mejor Álbum de Tango– y realizó giras por Latinoamérica y Europa. También integró el quinteto del acordeonista y bandoneonista Nini Flores, con presentaciones destacadas en el Teatro Colón.</p>
-
-                    <p>Entre 2016 y 2020 produjo el ciclo “Todo conCuerda” en Café Vinilo, dedicado a explorar la música para cuerdas en diversos géneros. Desde 2018 es docente en los programas de formación de Tango Sin Fin, Tango para Músicos y Tango for Musicians en Argentina, Europa y Estados Unidos. Publicó el libro “12 solos famosos de violín en el tango” y es concertino de la Orquesta Sin Fin.</p>
-
-                    <p>En 2017 creó SurdelSur Ensamble, dedicado a interpretar obras originales de compositores argentinos contemporáneos. El grupo se ha presentado en las principales salas del país y editó tres discos: el primero nominado a los Premios Carlos Gardel, el segundo con obras de compositoras argentinas actuales, y el tercero –grabado en 2025– junto a los maestros Víctor Lavallén y Horacio Cabarcos.</p>
-
-                    <p>Ha sido invitado a brindar masterclasses en el Festival Internacional D’Addario, compartiendo programa con destacados solistas latinoamericanos. Integra el Arthaus Ensemble, con el que interpreta repertorio contemporáneo, y en 2025 fue invitado por la Universidad de Pensilvania y la Central High School of Music de Filadelfia para ofrecer conferencias y conciertos sobre tango y música popular argentina.</p>
                 </div>
             </div>
         </section>
