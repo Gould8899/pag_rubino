@@ -7,6 +7,7 @@
     <title>Guillermo Rubino</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="data:,">
     <link rel="stylesheet" href="styles.css">
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -182,6 +183,7 @@
 
             if (menuBtn) {
                 menuBtn.addEventListener('click', () => {
+                    console.log('Menu toggled');
                     navLinks.classList.toggle('active');
                     const icon = menuBtn.querySelector('i');
                     if (navLinks.classList.contains('active')) {
