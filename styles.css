@@ -607,3 +607,90 @@ h3.section-title::after {
   }
 }
 
+
+/* Mobile Menu Styles */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 10px;
+  transition: color 0.2s ease;
+}
+
+.mobile-menu-toggle:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: block;
+    order: 3; /* Place after logo and before/after social? Let's control order with flex */
+  }
+
+  .nav-container {
+    position: relative; /* For absolute positioning of menu if needed */
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: var(--nav-bg);
+    backdrop-filter: blur(10px);
+    padding: 30px 20px;
+    gap: 25px;
+    border-bottom: 1px solid var(--border);
+    transform: translateY(-150%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .nav-links.active {
+    transform: translateY(0);
+    visibility: visible;
+    opacity: 1;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .nav-links.active li {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Stagger animation for links */
+  .nav-links.active li:nth-child(1) { transition-delay: 0.1s; }
+  .nav-links.active li:nth-child(2) { transition-delay: 0.15s; }
+  .nav-links.active li:nth-child(3) { transition-delay: 0.2s; }
+  .nav-links.active li:nth-child(4) { transition-delay: 0.25s; }
+  .nav-links.active li:nth-child(5) { transition-delay: 0.3s; }
+  .nav-links.active li:nth-child(6) { transition-delay: 0.35s; }
+  .nav-links.active li:nth-child(7) { transition-delay: 0.4s; }
+
+  .nav-links a {
+    font-size: 1.2rem;
+    display: block;
+    padding: 10px;
+  }
+  
+  /* Adjust social icons for mobile */
+  .nav-social {
+    margin-left: auto; /* Push to right */
+    margin-right: 15px;
+  }
+}
+
