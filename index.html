@@ -142,124 +142,144 @@
 </head>
 
 <body>
-    <!-- Contenedor principal de la página -->
-    <div class="container">
-        <!-- Foto principal -->
-        <!-- Sección: Foto principal y banner de nombre -->
-        <div class="hero">
+    <!-- Navegación -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">GR</a>
+            <ul class="nav-links">
+                <li><a href="#videos">Videos</a></li>
+                <li><a href="#music">Música</a></li>
+                <li><a href="#gallery">Galería</a></li>
+                <li><a href="#bio">Bio</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Sección: Foto principal y banner de nombre -->
+    <header id="home" class="hero-section">
+        <div class="hero-container">
             <div class="hero-content">
                 <h1 class="hero-name">Guillermo <span class="text-highlight">Rubino</span></h1>
                 <h2 class="hero-subtitle">Violinista, compositor, director y creador de ensambles de tango y música sudamericana</h2>
                 <p class="hero-description">
-                    Guillermo Rubino es un violinista y director de orquesta argentino, reconocido por su trabajo dentro del tango contemporáneo. Su estilo combina técnica, expresividad y una mirada joven sobre la música argentina y sudamericana, integrando tradición e innovación.
+                    Guillermo Rubino es un violinista y director de orquesta argentino, reconocido por su trabajo dentro del tango tradicional y contemporáneo. Su estilo combina técnica, expresividad y una mirada joven sobre la música argentina y sudamericana, integrando tradición e innovación.
                 </p>
             </div>
             <div class="hero-image-wrapper">
                 <img src="Foto_Rubino.jpg" alt="Guillermo Rubino" class="profile-img" loading="eager">
             </div>
         </div>
+    </header>
+
+    <main>
         <!-- Sección: Videos de YouTube -->
-        <div class="section">
-            <h3 class="section-title">Videos</h3>
-            <div class="video-list">
-                <iframe src="https://www.youtube.com/embed/GYWDTms5Vi0" title="YouTube video 1"
-                    frameborder="0" allowfullscreen loading="lazy"></iframe>
-                <iframe src="https://www.youtube.com/embed/VfAZhtENXMk" title="YouTube video 2"
-                    frameborder="0" allowfullscreen loading="lazy"></iframe>
-                <iframe src="https://www.youtube.com/embed/Zp6OhnGS1TY" title="YouTube video 3"
-                    frameborder="0" allowfullscreen loading="lazy"></iframe>
+        <section id="videos" class="content-section alt-bg">
+            <div class="section-container">
+                <h3 class="section-title">Videos</h3>
+                <div class="video-list">
+                    <iframe src="https://www.youtube.com/embed/GYWDTms5Vi0" title="YouTube video 1"
+                        frameborder="0" allowfullscreen loading="lazy"></iframe>
+                    <iframe src="https://www.youtube.com/embed/VfAZhtENXMk" title="YouTube video 2"
+                        frameborder="0" allowfullscreen loading="lazy"></iframe>
+                    <iframe src="https://www.youtube.com/embed/Zp6OhnGS1TY" title="YouTube video 3"
+                        frameborder="0" allowfullscreen loading="lazy"></iframe>
+                </div>
             </div>
-        </div>
-        <!-- Enlaces de Spotify -->
+        </section>
+
         <!-- Sección: Enlaces de Spotify -->
-        <div class="section">
-            <h3 class="section-title">Escuchá sus discos</h3>
-            <div class="spotify-embed">
-                <iframe
-                    src="https://open.spotify.com/embed/album/1yZWIy7yIfeTolvEg2zFH8?utm_source=generator" width="100%"
-                    height="152" frameBorder="0" allowfullscreen=""
-                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" loading="lazy"></iframe>
-                <iframe
-                    src="https://open.spotify.com/embed/album/3VEEqqigrOfnI3pIqTbDn7?utm_source=generator" width="100%"
-                    height="152" frameBorder="0" allowfullscreen=""
-                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" loading="lazy"></iframe>
-                <iframe
-                    src="https://open.spotify.com/embed/album/1F6iIHY9CPYJSPXJcC0oME?utm_source=generator" width="100%"
-                    height="152" frameBorder="0" allowfullscreen=""
-                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" loading="lazy"></iframe>
-                <iframe
-                    src="https://open.spotify.com/embed/album/7lJmpJfvAHHRqOrQ6hK3tT?utm_source=generator" width="100%"
-                    height="152" frameBorder="0" allowfullscreen=""
-                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" loading="lazy"></iframe>
+        <section id="music" class="content-section">
+            <div class="section-container">
+                <h3 class="section-title">Escuchá sus discos</h3>
+                <div class="spotify-grid">
+                    <iframe
+                        src="https://open.spotify.com/embed/album/1yZWIy7yIfeTolvEg2zFH8?utm_source=generator" width="100%"
+                        height="152" frameBorder="0" allowfullscreen=""
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" loading="lazy"></iframe>
+                    <iframe
+                        src="https://open.spotify.com/embed/album/3VEEqqigrOfnI3pIqTbDn7?utm_source=generator" width="100%"
+                        height="152" frameBorder="0" allowfullscreen=""
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" loading="lazy"></iframe>
+                    <iframe
+                        src="https://open.spotify.com/embed/album/1F6iIHY9CPYJSPXJcC0oME?utm_source=generator" width="100%"
+                        height="152" frameBorder="0" allowfullscreen=""
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" loading="lazy"></iframe>
+                    <iframe
+                        src="https://open.spotify.com/embed/album/7lJmpJfvAHHRqOrQ6hK3tT?utm_source=generator" width="100%"
+                        height="152" frameBorder="0" allowfullscreen=""
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" loading="lazy"></iframe>
+                </div>
             </div>
-        </div>
-        <!-- Galería de fotos -->
+        </section>
+
         <!-- Sección: Galería de fotos -->
-        <div class="section">
-            <h3 class="section-title">Galería</h3>
-            <div class="gallery-grid">
-                <img src="fotosgui\1CentralFiladelfia1.jpeg" alt="1CentralFiladelfia1" class="gallery-img" loading="lazy"> 
-                <img src="fotosgui\1CentralFiladelfia2.jpeg" alt="1CentralFiladelfia2" class="gallery-img" loading="lazy">
-                <img src="fotosgui\1Reed1.jpeg" alt="1Reed1" class="gallery-img" loading="lazy">
-                <img src="fotosgui\ChangoSurdelSur.jpeg" alt="ChangoSurdelSur" class="gallery-img" loading="lazy">
-                <img src="fotosgui\Colon.jpeg" alt="Colon" class="gallery-img" loading="lazy">
-                <img src="fotosgui\Ion.jpeg" alt="Ion" class="gallery-img" loading="lazy">
-                <img src="fotosgui\LatinGrammy.jpeg" alt="LatinGrammy" class="gallery-img" loading="lazy">
-                <img src="fotosgui\Stowe1.jpeg" alt="Stowe1" class="gallery-img" loading="lazy">
-                <img src="fotosgui\UniFiladelfia2.jpeg" alt="UniFiladelfia2" class="gallery-img" loading="lazy">
-                <img src="fotosgui\UniFiladelfia1.jpeg" alt="UniFiladelfia1" class="gallery-img" loading="lazy">
-                <img src="fotosgui\Usinadelarte.jpeg" alt="Usinadelarte" class="gallery-img" loading="lazy">
-                <img src="fotosgui\50A0914.jpg" alt="50A0914" class="gallery-img" loading="lazy">
-                <img src="fotosgui\a0402.2018_35_37fa4d.jpg" alt="a0402.2018_35_37fa4d" class="gallery-img" loading="lazy">
-                <img src="fotosgui\Aca2.jpg" alt="Aca2" class="gallery-img" loading="lazy">
-                <img src="fotosgui\AcaDSQ.jpg" alt="AcaDSQ" class="gallery-img" loading="lazy">
-                <img src="fotosgui\ConLeopoldoenAADI.jpg" alt="ConLeopoldoenAADI" class="gallery-img" loading="lazy">
-                <img src="fotosgui\ElArranqueestudio.jpg" alt="ElArranqueestudio" class="gallery-img" loading="lazy">
-                <img src="fotosgui\FacDerecho.JPG" alt="FacDerecho" class="gallery-img" loading="lazy">            
-                <img src="fotosgui\Sanmartin5.JPG" alt="Sanmartin5" class="gallery-img" loading="lazy">
-                <img src="fotosgui\SanMartin7.JPG" alt="SanMartin7" class="gallery-img" loading="lazy">
-
-                
+        <section id="gallery" class="content-section alt-bg">
+            <div class="section-container">
+                <h3 class="section-title">Galería</h3>
+                <div class="gallery-grid">
+                    <img src="fotosgui\1CentralFiladelfia1.jpeg" alt="1CentralFiladelfia1" class="gallery-img" loading="lazy"> 
+                    <img src="fotosgui\1CentralFiladelfia2.jpeg" alt="1CentralFiladelfia2" class="gallery-img" loading="lazy">
+                    <img src="fotosgui\1Reed1.jpeg" alt="1Reed1" class="gallery-img" loading="lazy">
+                    <img src="fotosgui\ChangoSurdelSur.jpeg" alt="ChangoSurdelSur" class="gallery-img" loading="lazy">
+                    <img src="fotosgui\Colon.jpeg" alt="Colon" class="gallery-img" loading="lazy">
+                    <img src="fotosgui\Ion.jpeg" alt="Ion" class="gallery-img" loading="lazy">
+                    <img src="fotosgui\LatinGrammy.jpeg" alt="LatinGrammy" class="gallery-img" loading="lazy">
+                    <img src="fotosgui\Stowe1.jpeg" alt="Stowe1" class="gallery-img" loading="lazy">
+                    <img src="fotosgui\UniFiladelfia2.jpeg" alt="UniFiladelfia2" class="gallery-img" loading="lazy">
+                    <img src="fotosgui\UniFiladelfia1.jpeg" alt="UniFiladelfia1" class="gallery-img" loading="lazy">
+                    <img src="fotosgui\Usinadelarte.jpeg" alt="Usinadelarte" class="gallery-img" loading="lazy">
+                    <img src="fotosgui\50A0914.jpg" alt="50A0914" class="gallery-img" loading="lazy">
+                    <img src="fotosgui\a0402.2018_35_37fa4d.jpg" alt="a0402.2018_35_37fa4d" class="gallery-img" loading="lazy">
+                    <img src="fotosgui\Aca2.jpg" alt="Aca2" class="gallery-img" loading="lazy">
+                    <img src="fotosgui\AcaDSQ.jpg" alt="AcaDSQ" class="gallery-img" loading="lazy">
+                    <img src="fotosgui\ConLeopoldoenAADI.jpg" alt="ConLeopoldoenAADI" class="gallery-img" loading="lazy">
+                    <img src="fotosgui\ElArranqueestudio.jpg" alt="ElArranqueestudio" class="gallery-img" loading="lazy">
+                    <img src="fotosgui\FacDerecho.JPG" alt="FacDerecho" class="gallery-img" loading="lazy">            
+                    <img src="fotosgui\Sanmartin5.JPG" alt="Sanmartin5" class="gallery-img" loading="lazy">
+                    <img src="fotosgui\SanMartin7.JPG" alt="SanMartin7" class="gallery-img" loading="lazy">
+                </div>
             </div>
-        </div>
-        <!-- Biografía extendida -->
+        </section>
+
         <!-- Sección: Biografía extendida -->
-        <div class="bio section">
-    <h3 class="section-title">BIO</h3>
+        <section id="bio" class="content-section">
+            <div class="section-container bio-container">
+                <h3 class="section-title">Biografía</h3>
+                <div class="bio-text">
+                    <p>Violinista y compositor nacido en La Plata en 1979, formado en el Conservatorio “Gilardo Gilardi”, donde egresó como Instrumentista de Violín. Estudió con José Bondar, Pablo Saraví y Szymsia Bajour, y se desempeñó como primer violín en diversas formaciones académicas, entre ellas las orquestas de cámara del Conservatorio y la Camerata Académica del Teatro Argentino. Durante nueve años integró la Orquesta Estable del Teatro Argentino como suplente de solista, abordando repertorio sinfónico, operístico y de ballet.</p>
 
-    <p>Violinista y compositor nacido en La Plata en 1979, formado en el Conservatorio “Gilardo Gilardi”, donde egresó como Instrumentista de Violín. Estudió con José Bondar, Pablo Saraví y Szymsia Bajour, y se desempeñó como primer violín en diversas formaciones académicas, entre ellas las orquestas de cámara del Conservatorio y la Camerata Académica del Teatro Argentino. Durante nueve años integró la Orquesta Estable del Teatro Argentino como suplente de solista, abordando repertorio sinfónico, operístico y de ballet.</p>
+                    <p>Participó de la Orquesta Sinfónica Juvenil del MERCOSUR en giras internacionales y actuó como solista con la Orquesta de Cámara Mayo. Entre 2005 y 2014 fue primer violín de la Orquesta El Arranque, con la que realizó giras nacionales e internacionales y registró los discos “Nuevos” y “Leopoldo Federico & El Arranque”, este último ganador del Premio Carlos Gardel.</p>
 
-    <p>Participó de la Orquesta Sinfónica Juvenil del MERCOSUR en giras internacionales y actuó como solista con la Orquesta de Cámara Mayo. Entre 2005 y 2014 fue primer violín de la Orquesta El Arranque, con la que realizó giras nacionales e internacionales y registró los discos “Nuevos” y “Leopoldo Federico & El Arranque”, este último ganador del Premio Carlos Gardel.</p>
+                    <p>Desde 2009 es primer violín e instructor de cuerdas de la Orquesta Escuela de Tango Emilio Balcarce, el proyecto pedagógico de tango más destacado de la actualidad. Participó como solista en los álbumes “Mistonguero” y “Gobbi inédito”, ambos premiados, y formó parte del concierto “Piazzolla 100 años” en la sala principal del Teatro Colón.</p>
 
-    <p>Desde 2009 es primer violín e instructor de cuerdas de la Orquesta Escuela de Tango Emilio Balcarce, el proyecto pedagógico de tango más destacado de la actualidad. Participó como solista en los álbumes “Mistonguero” y “Gobbi inédito”, ambos premiados, y formó parte del concierto “Piazzolla 100 años” en la sala principal del Teatro Colón.</p>
+                    <p>Es miembro fundador del Diego Schissi Quinteto, con el que grabó numerosos discos –incluido “Te” y “Apiazolado”, ganador del Latin Grammy al Mejor Álbum de Tango– y realizó giras por Latinoamérica y Europa. También integró el quinteto del acordeonista y bandoneonista Nini Flores, con presentaciones destacadas en el Teatro Colón.</p>
 
-    <p>Es miembro fundador del Diego Schissi Quinteto, con el que grabó numerosos discos –incluido “Te” y “Apiazolado”, ganador del Latin Grammy al Mejor Álbum de Tango– y realizó giras por Latinoamérica y Europa. También integró el quinteto del acordeonista y bandoneonista Nini Flores, con presentaciones destacadas en el Teatro Colón.</p>
+                    <p>Entre 2016 y 2020 produjo el ciclo “Todo conCuerda” en Café Vinilo, dedicado a explorar la música para cuerdas en diversos géneros. Desde 2018 es docente en los programas de formación de Tango Sin Fin, Tango para Músicos y Tango for Musicians en Argentina, Europa y Estados Unidos. Publicó el libro “12 solos famosos de violín en el tango” y es concertino de la Orquesta Sin Fin.</p>
 
-    <p>Entre 2016 y 2020 produjo el ciclo “Todo conCuerda” en Café Vinilo, dedicado a explorar la música para cuerdas en diversos géneros. Desde 2018 es docente en los programas de formación de Tango Sin Fin, Tango para Músicos y Tango for Musicians en Argentina, Europa y Estados Unidos. Publicó el libro “12 solos famosos de violín en el tango” y es concertino de la Orquesta Sin Fin.</p>
+                    <p>En 2017 creó SurdelSur Ensamble, dedicado a interpretar obras originales de compositores argentinos contemporáneos. El grupo se ha presentado en las principales salas del país y editó tres discos: el primero nominado a los Premios Carlos Gardel, el segundo con obras de compositoras argentinas actuales, y el tercero –grabado en 2025– junto a los maestros Víctor Lavallén y Horacio Cabarcos.</p>
 
-    <p>En 2017 creó SurdelSur Ensamble, dedicado a interpretar obras originales de compositores argentinos contemporáneos. El grupo se ha presentado en las principales salas del país y editó tres discos: el primero nominado a los Premios Carlos Gardel, el segundo con obras de compositoras argentinas actuales, y el tercero –grabado en 2025– junto a los maestros Víctor Lavallén y Horacio Cabarcos.</p>
+                    <p>Ha sido invitado a brindar masterclasses en el Festival Internacional D’Addario, compartiendo programa con destacados solistas latinoamericanos. Integra el Arthaus Ensemble, con el que interpreta repertorio contemporáneo, y en 2025 fue invitado por la Universidad de Pensilvania y la Central High School of Music de Filadelfia para ofrecer conferencias y conciertos sobre tango y música popular argentina.</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <p>Ha sido invitado a brindar masterclasses en el Festival Internacional D’Addario, compartiendo programa con destacados solistas latinoamericanos. Integra el Arthaus Ensemble, con el que interpreta repertorio contemporáneo, y en 2025 fue invitado por la Universidad de Pensilvania y la Central High School of Music de Filadelfia para ofrecer conferencias y conciertos sobre tango y música popular argentina.</p>
-
-</div>
-
-        
-        <!-- Contacto -->
-        <!-- Sección: Contacto -->
-        <div class="section">
-            <h3 class="section-title">CONTACTO</h3>
-            <p class="contact-email">rubinoguille@gmail.com </p>
+    <!-- Footer: Contacto y Redes -->
+    <footer id="contact" class="main-footer">
+        <div class="section-container">
+            <h3 class="section-title">Contacto</h3>
+            <p class="contact-email">rubinoguille@gmail.com</p>
+            
+            <div class="social-links">
+                <a href="https://www.instagram.com/guillerubino/" target="_blank" class="social-link instagram-link">Instagram</a>
+                <a href="https://open.spotify.com/intl-es/artist/0FXnqaD1TonyX1VlodSCGA" target="_blank" class="social-link spotify-link">Spotify</a>
+                <a href="https://www.facebook.com/guillermo.rubino.39" target="_blank" class="social-link facebook-link">Facebook</a>
+                <a href="https://www.youtube.com/@surdelsurensamble7331" target="_blank" class="social-link youtube-link">YouTube</a>
+            </div>
+            <p class="copyright">© 2025 Guillermo Rubino</p>
         </div>
-        <!-- Enlaces sociales -->
-        <!-- Sección: Enlaces sociales -->
-        <!-- Redes sociales con íconos -->
-        <div class="links">
-            <a href="https://www.instagram.com/guillerubino/" target="_blank" class="instagram-link">Instagram</a>
-            <a href="https://open.spotify.com/intl-es/artist/0FXnqaD1TonyX1VlodSCGA" target="_blank"
-                class="spotify-link">Spotify</a>
-            <a href="https://www.facebook.com/guillermo.rubino.39" target="_blank" class="facebook-link">Facebook</a>
-            <a href="https://www.youtube.com/@surdelsurensamble7331" target="_blank" class="youtube-link">YouTube</a>
-        </div>
+    </footer>
     </div>
 </body>
 
