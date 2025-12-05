@@ -432,7 +432,7 @@ h3.section-title::after {
 /* Compact Video List */
 .compact-video-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 360px));
   gap: 32px;
   justify-content: center;
   margin-bottom: 40px;
