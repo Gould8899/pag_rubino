@@ -119,7 +119,7 @@ const translations = {
         title: `Press`,
         quotes: [
           `“SurdelSur Ensamble achieved a remarkable balance between popular and academic elements, offering a diverse and deeply expressive repertoire.”<br><br>— Santiago Giordano`,
-          `“In Alquimia, every musical gesture distills years of craft: a tango that breathes tradition and, at the same time, reinvents itself in every phrase.”<br><br>“The participation of Lavallén and Cabarcos gives Alquimia a powerful artistic imprint, reaffirming the ensemble's commitment to interpretive excellence.”<br><br>— Vicente Lopez`,
+          `“In Alquimia, every musical gesture distills years of craft: a tango that breathes tradition and, at the same time, reinvents itself in every phrase.”<br><br>“The participation of Lavallén and Cabarcos gives Alquimia a powerful artistic imprint, reaffirming the ensemble's commitment to interpretive excellence.”`,
           `“With high interpretive quality, SurdelSur Ensamble achieves a masterful and balanced synthesis by merging popular and academic works with clarity and sensitivity.”`
         ]
       }
