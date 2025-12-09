@@ -1,4 +1,71 @@
 document.addEventListener('DOMContentLoaded', function () {
+    const availableTranslations = (typeof translations !== 'undefined') ? translations : {};
+    const i18nRegistry = [];
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        if (!key) return;
+        const attr = (el.dataset.i18nAttr || '').trim();
+        i18nRegistry.push({
+            el,
+            key,
+            attr: attr || null,
+            defaultValue: attr ? (el.getAttribute(attr) || '') : el.innerHTML
+        });
+    });
+
+    function renderLanguage(lang) {
+        const dict = availableTranslations[lang];
+        const targetLang = (lang === 'es' || !dict) ? 'es' : lang;
+        const translationsMap = availableTranslations[targetLang] || {};
+
+        i18nRegistry.forEach(item => {
+            const translatedValue = targetLang === 'es' ? undefined : translationsMap[item.key];
+            const value = (typeof translatedValue === 'string' && translatedValue.length)
+                ? translatedValue
+                : item.defaultValue;
+            if (item.attr) {
+                item.el.setAttribute(item.attr, value);
+            } else {
+                item.el.innerHTML = value;
+            }
+        });
+
+        document.documentElement.lang = targetLang;
+        document.querySelectorAll('.lang-link').forEach(link => {
+            const linkLang = link.dataset.lang || 'es';
+            link.classList.toggle('active', linkLang === targetLang);
+        });
+
+        return targetLang;
+    }
+
+    function updateLanguage(lang) {
+        const appliedLang = renderLanguage(lang);
+        const params = new URLSearchParams(window.location.search);
+        if (appliedLang === 'es') {
+            params.delete('lang');
+        } else {
+            params.set('lang', appliedLang);
+        }
+        const query = params.toString();
+        const hash = window.location.hash || '';
+        const newUrl = query ? `${window.location.pathname}?${query}${hash}` : `${window.location.pathname}${hash}`;
+        window.history.replaceState(null, '', newUrl);
+    }
+
+    const initialParams = new URLSearchParams(window.location.search);
+    const initialLang = initialParams.get('lang') || 'es';
+    updateLanguage(initialLang);
+
+    document.querySelectorAll('.lang-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const lang = link.dataset.lang || 'es';
+            updateLanguage(lang);
+        });
+    });
+
     const images = document.querySelectorAll('.gallery-img');
     const gallery = Array.from(images).map(img => img.src);
     let currentIndex = 0;
@@ -134,23 +201,23 @@ document.addEventListener('DOMContentLoaded', function () {
         const videoId = facade.dataset.videoId;
         const maxResUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
         const hqUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
-        
+
         // Try to load maxres first
         const img = new Image();
         img.src = maxResUrl;
-        img.onload = function() {
+        img.onload = function () {
             // YouTube returns a 120px wide placeholder if maxres doesn't exist
             if (this.width === 120) {
-                 facade.style.backgroundImage = `url('${hqUrl}')`;
+                facade.style.backgroundImage = `url('${hqUrl}')`;
             } else {
-                 facade.style.backgroundImage = `url('${maxResUrl}')`;
+                facade.style.backgroundImage = `url('${maxResUrl}')`;
             }
         };
-        img.onerror = function() {
+        img.onerror = function () {
             facade.style.backgroundImage = `url('${hqUrl}')`;
         };
 
-        facade.addEventListener('click', function() {
+        facade.addEventListener('click', function () {
             const iframe = document.createElement('iframe');
             iframe.setAttribute('src', `https://www.youtube.com/embed/${videoId}?autoplay=1`);
             iframe.setAttribute('frameborder', '0');
@@ -158,7 +225,7 @@ document.addEventListener('DOMContentLoaded', function () {
             iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
             iframe.style.width = '100%';
             iframe.style.height = '100%';
-            
+
             this.innerHTML = '';
             this.appendChild(iframe);
         });
