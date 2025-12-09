@@ -1,8 +1,8 @@
 const translations = {
   es: {
-    nav: ["Bio","SurdelSur","Música y Videos","Docencia","Galería","Prensa","Contacto"],
+    nav: ["Bio", "SurdelSur", "Música y Videos", "Docencia", "Galería", "Prensa", "Contacto"],
     hero: {
-      subtitle: "Violinista, compositor, director y formador de ensambles de tango y música sudamericana",
+      subtitle: "Violinista y compositor argentino, formador de ensambles de tango y música sudamericana",
       description: `Guillermo Rubino es un violinista y director de orquesta argentino, reconocido por su trabajo dentro del tango tradicional y contemporáneo. Su estilo combina técnica, expresividad y una mirada joven sobre la música argentina y sudamericana, integrando tradición e innovación.`
     },
     sections: {
@@ -22,7 +22,7 @@ const translations = {
           `SurdelSur Ensamble es el proyecto creado y dirigido por Guillermo Rubino, dedicado a interpretar obras originales y arreglos contemporáneos para cuerdas de compositores argentinos. La propuesta combina tango, música contemporánea y folklore argentino con un sonido joven y fresco.`,
           `El ensamble se ha presentado en escenarios como el Teatro Colón, Teatro San Martín, Usina del Arte y el CCK, y cuenta con tres discos, uno de ellos nominado a los Premios Carlos Gardel.`
         ],
-        videoCaptions: [`"Cielo" (Guillermo Rubino) en el Teatro Colón`,`"Búsqueda" (Chango Spasiuk)`]
+        videoCaptions: [`"Cielo" (Guillermo Rubino) en el Teatro Colón`, `"Búsqueda" (Chango Spasiuk)`]
       },
       musicVideos: {
         title: "Música & Videos",
@@ -65,9 +65,9 @@ const translations = {
     misc: { mobileMenuLabel: `Abrir menú` }
   },
   en: {
-    nav: ["Bio","SurdelSur","Music & Videos","Teaching","Gallery","Press","Contact"],
+    nav: ["Bio", "SurdelSur", "Music & Videos", "Teaching", "Gallery", "Press", "Contact"],
     hero: {
-      subtitle: "Violinist, composer, conductor, and creator of tango and South American music ensembles",
+      subtitle: "Argentine violinist and composer, creator of tango and South American music ensembles",
       description: `Guillermo Rubino is an Argentine violinist and conductor, recognized for his work within traditional and contemporary tango. His style combines technique, expressiveness, and a young perspective on Argentine and South American music, integrating tradition and innovation.`
     },
     sections: {
@@ -87,7 +87,7 @@ const translations = {
           `SurdelSur Ensamble is the project created and directed by Guillermo Rubino, dedicated to interpreting original works and contemporary arrangements for strings by Argentine composers. The proposal combines tango, contemporary music, and Argentine folklore with a young and fresh sound.`,
           `The ensemble has performed on stages such as the Teatro Colón, Teatro San Martín, Usina del Arte, and the CCK, and has three albums, one of them nominated for the Carlos Gardel Awards.`
         ],
-        videoCaptions: [`"Cielo" ("Sky") (Guillermo Rubino) at Teatro Colón`,`"Búsqueda" ("Search") (Chango Spasiuk)`]
+        videoCaptions: [`"Cielo" ("Sky") (Guillermo Rubino) at Teatro Colón`, `"Búsqueda" ("Search") (Chango Spasiuk)`]
       },
       musicVideos: {
         title: "Music & Videos",
@@ -135,97 +135,97 @@ const translations = {
   }
 };
 
-function applyTranslations(lang){
-  if(!translations[lang]) return;
+function applyTranslations(lang) {
+  if (!translations[lang]) return;
   const t = translations[lang];
 
   // Nav
   const navLinks = document.querySelectorAll('.nav-links li a');
-  navLinks.forEach((el, i)=>{ if(t.nav[i]) el.textContent = t.nav[i]; });
+  navLinks.forEach((el, i) => { if (t.nav[i]) el.textContent = t.nav[i]; });
 
   // lang switch active class
-  document.querySelectorAll('.lang-link').forEach(a=>{
-    a.classList.toggle('active', a.dataset && a.dataset.lang===lang);
+  document.querySelectorAll('.lang-link').forEach(a => {
+    a.classList.toggle('active', a.dataset && a.dataset.lang === lang);
   });
 
   // Hero
-  const hs = document.querySelector('.hero-subtitle'); if(hs) hs.textContent = t.hero.subtitle;
-  const hd = document.querySelector('.hero-description'); if(hd) hd.textContent = t.hero.description;
+  const hs = document.querySelector('.hero-subtitle'); if (hs) hs.textContent = t.hero.subtitle;
+  const hd = document.querySelector('.hero-description'); if (hd) hd.textContent = t.hero.description;
 
   // Sections
-  const setSection = (id, data)=>{
-    const sec = document.querySelector('#'+id);
-    if(!sec) return;
-    const h3 = sec.querySelector('.section-title'); if(h3 && data.title) h3.textContent = data.title;
-    if(data.paragraphs){
+  const setSection = (id, data) => {
+    const sec = document.querySelector('#' + id);
+    if (!sec) return;
+    const h3 = sec.querySelector('.section-title'); if (h3 && data.title) h3.textContent = data.title;
+    if (data.paragraphs) {
       const paras = sec.querySelectorAll('.bio-text p');
-      paras.forEach((p, i)=>{ if(data.paragraphs[i]) p.textContent = data.paragraphs[i]; });
+      paras.forEach((p, i) => { if (data.paragraphs[i]) p.textContent = data.paragraphs[i]; });
     }
   };
 
   setSection('bio', t.sections.bio);
-  setSection('surdelsur', {title:t.sections.surdelsur.title, paragraphs:t.sections.surdelsur.paragraphs});
+  setSection('surdelsur', { title: t.sections.surdelsur.title, paragraphs: t.sections.surdelsur.paragraphs });
 
   // SurdelSur video captions
   const sCapt = document.querySelectorAll('#surdelsur .video-caption');
-  sCapt.forEach((el,i)=>{ if(t.sections.surdelsur.videoCaptions[i]) el.innerHTML = t.sections.surdelsur.videoCaptions[i]; });
+  sCapt.forEach((el, i) => { if (t.sections.surdelsur.videoCaptions[i]) el.innerHTML = t.sections.surdelsur.videoCaptions[i]; });
 
   // Music & Videos
   const mv = document.querySelector('#music-videos');
-  if(mv){
+  if (mv) {
     const h4s = mv.querySelectorAll('h4');
-    if(h4s[0]) h4s[0].textContent = t.sections.musicVideos.featuredHeading;
-    if(h4s[1]) h4s[1].textContent = t.sections.musicVideos.spotifyHeading;
+    if (h4s[0]) h4s[0].textContent = t.sections.musicVideos.featuredHeading;
+    if (h4s[1]) h4s[1].textContent = t.sections.musicVideos.spotifyHeading;
 
     const caps = mv.querySelectorAll('.video-caption');
-    caps.forEach((el,i)=>{ if(t.sections.musicVideos.videoCaptions[i]) el.innerHTML = t.sections.musicVideos.videoCaptions[i]; });
+    caps.forEach((el, i) => { if (t.sections.musicVideos.videoCaptions[i]) el.innerHTML = t.sections.musicVideos.videoCaptions[i]; });
   }
 
   // Workshops
   const wk = document.querySelector('#workshops');
-  if(wk){
-    const h3 = wk.querySelector('.section-title'); if(h3) h3.textContent = t.sections.workshops.title;
+  if (wk) {
+    const h3 = wk.querySelector('.section-title'); if (h3) h3.textContent = t.sections.workshops.title;
     const paras = wk.querySelectorAll('.bio-text p');
-    paras.forEach((p,i)=>{ if(t.sections.workshops.paragraphs[i]) p.textContent = t.sections.workshops.paragraphs[i]; });
+    paras.forEach((p, i) => { if (t.sections.workshops.paragraphs[i]) p.textContent = t.sections.workshops.paragraphs[i]; });
     const up = wk.querySelector('.upcoming-events') || wk;
-    const upHeading = wk.querySelector('h4[style*="color: var(--accent)"]'); if(upHeading) upHeading.textContent = t.sections.workshops.upcomingHeading;
-    const cta = wk.querySelector('.cta-button'); if(cta) cta.textContent = t.sections.workshops.cta;
+    const upHeading = wk.querySelector('h4[style*="color: var(--accent)"]'); if (upHeading) upHeading.textContent = t.sections.workshops.upcomingHeading;
+    const cta = wk.querySelector('.cta-button'); if (cta) cta.textContent = t.sections.workshops.cta;
   }
 
   // Gallery
-  const gal = document.querySelector('#gallery'); if(gal){ const h3 = gal.querySelector('.section-title'); if(h3) h3.textContent = t.sections.gallery.title; }
+  const gal = document.querySelector('#gallery'); if (gal) { const h3 = gal.querySelector('.section-title'); if (h3) h3.textContent = t.sections.gallery.title; }
 
   // Press
   const pr = document.querySelector('#prensa');
-  if(pr){
-    const h3 = pr.querySelector('.section-title'); if(h3) h3.textContent = t.sections.press.title;
+  if (pr) {
+    const h3 = pr.querySelector('.section-title'); if (h3) h3.textContent = t.sections.press.title;
     const captions = pr.querySelectorAll('.prensa-caption');
-    captions.forEach((el,i)=>{ if(t.sections.press.quotes[i]) el.innerHTML = t.sections.press.quotes[i]; });
+    captions.forEach((el, i) => { if (t.sections.press.quotes[i]) el.innerHTML = t.sections.press.quotes[i]; });
   }
 
   // Footer
-  const fct = document.querySelector('#contact .section-title'); if(fct) fct.textContent = t.footer.contactTitle;
-  const webdev = document.querySelector('#contact p[style]'); if(webdev) webdev.textContent = t.footer.webdev;
-  const cpr = document.querySelector('#contact .copyright'); if(cpr) cpr.textContent = t.footer.copyright;
+  const fct = document.querySelector('#contact .section-title'); if (fct) fct.textContent = t.footer.contactTitle;
+  const webdev = document.querySelector('#contact p[style]'); if (webdev) webdev.textContent = t.footer.webdev;
+  const cpr = document.querySelector('#contact .copyright'); if (cpr) cpr.textContent = t.footer.copyright;
 
   // Misc
-  const mobileBtn = document.querySelector('.mobile-menu-toggle'); if(mobileBtn) mobileBtn.setAttribute('aria-label', t.misc.mobileMenuLabel);
+  const mobileBtn = document.querySelector('.mobile-menu-toggle'); if (mobileBtn) mobileBtn.setAttribute('aria-label', t.misc.mobileMenuLabel);
 }
 
-function switchLang(lang){
+function switchLang(lang) {
   applyTranslations(lang);
   // Optional: set html lang attribute
-  document.documentElement.lang = (lang==='en')? 'en' : 'es';
+  document.documentElement.lang = (lang === 'en') ? 'en' : 'es';
 }
 
 // On load, if url has ?lang=en then apply
-window.addEventListener('DOMContentLoaded', ()=>{
+window.addEventListener('DOMContentLoaded', () => {
   const params = new URLSearchParams(location.search);
   const lang = params.get('lang') || 'es';
   switchLang(lang);
 
   // attach lang buttons
-  document.querySelectorAll('.lang-link').forEach(a=>{
-    a.addEventListener('click', (e)=>{ e.preventDefault(); const l = a.dataset.lang || (a.textContent.trim().toLowerCase()==='en'? 'en' : 'es'); switchLang(l); history.replaceState(null,'', '?lang='+l); });
+  document.querySelectorAll('.lang-link').forEach(a => {
+    a.addEventListener('click', (e) => { e.preventDefault(); const l = a.dataset.lang || (a.textContent.trim().toLowerCase() === 'en' ? 'en' : 'es'); switchLang(l); history.replaceState(null, '', '?lang=' + l); });
   });
 });
